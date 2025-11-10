@@ -1,9 +1,11 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+
 using namespace std;
 
-float energy =50, reputation=50;
+float energy =100, reputation=50;
+
 
 void scenario1() { 
 
@@ -14,42 +16,54 @@ bool loop= true, loop1=true;
 
 cout<<"\t\t\t\tProfessor Ahmed reports a robbery at his home."<<endl;
 cout<< "\tHis wife claims she was asleep, and the only neighbour nearby is someone who works night shifts."<<endl;
- cout<<"\t\tYou, Detective, must find out who’s telling the truth before evidence is lost."<<endl;
+ cout<<"\t\tYou, Detective, must find out whoâ€™s telling the truth before evidence is lost."<<endl;
  cout<<"\t --------------------------------------------------------------------------------------------------------";
  cout<<endl;
  
+ 
  //SETTING UP THE CONDITION OF ENERGY LEVEL 
  
+ 
  while (energy>=20){
+ 	// the function start here
+    
  	
- 	
- 	if(energy ==20) {
- 		cout<<endl;
- 		cout<<endl;
- 		
-    cout << "\t \t You Failed,energy too low";
-    cout << "\t \t Reputation = " << reputation << endl;
-     return;
-}
+ 
+ // The functions starts with asking the user where to go
  
   cout<<"\t --------------------------------------------------------------------------------------------------------";
   cout<<endl;
  cout<<" Now you have three option,"<<endl;
  cout<<"1. Check House, 2. Interview Wife , 3. Interview Neighbour"<<endl<<endl;
  cin>>search;
-
  
+ 
+while (search != '1' && search != '2'&& search !='3') {
+ // if user gets wrong input, it is not considered
+ 
+        cout << "Invalid input. Please enter '1' or '2' or '3' again: "<<endl;
+        cin >>search;
+                      }
  if(search =='1' ){
  	
- 	energy -=10;
+ 	energy -=10;  // energy decreases 10 % per going
  	
  	while(loop==true){
+ 		
+ 		// the user enters house and further has choice
 	 
  	cout<<"\t\tNow you are checking the house"<<endl<<endl;
  	
  	cout<<"You can see 1. the living room, 2. Study room, 3. Roof "<<endl;
  	
  	cin>>subsearch;
+ 	
+ 	// wrong input will enforce user to input again
+ 	
+ 	while (subsearch != '1' && subsearch != '2'&& subsearch !='3') {
+        cout << "Invalid input. Please enter '1' or '2' or '3'again: "<<endl;
+        cin >>subsearch;
+                      }
  	
  	//enter the living room and clue of broken window
  	
@@ -60,18 +74,20 @@ cout<< "\tHis wife claims she was asleep, and the only neighbour nearby is someo
  		cout<<"\t The window of the living room is broaken.\n \t Do you want to note this down?(Y/N) ";
  		cout<<endl<<endl;
  		cin>>note;
- 		
+ 		// the user is checked if he notes useful clue
  		
  		while (note != 'Y' && note != 'N') {
         cout << "Invalid input. Please enter 'Y' or 'N' again: "<<endl;
         cin >>note;
                       }
  		if(note=='Y'){
+ 			// noting down clue increases reputation
  			cout<<"You availed the clue\n"<<endl;
  			reputation +=5;
  			
 		 }
 		 else if(note == 'N'){
+		 	//other wise it decreases
 		 	cout<<"You wasted the clue\n"<<endl;
  			reputation -=5;
  			
@@ -122,7 +138,7 @@ cout<< "\tHis wife claims she was asleep, and the only neighbour nearby is someo
 		 	energy-=10;
 		 }
 		 
-		 // To leave the house
+		 // To leave the house, the break ststemen is used 
 		 
 	 cout<<"\t \t Do you want to leave house (Y) or search more(N)?(Y/N)"<<endl;
 	 
@@ -145,8 +161,8 @@ cout<< "\tHis wife claims she was asleep, and the only neighbour nearby is someo
  
  // option 2 of investigating wife
   
- else if(search =='2'){
- 	energy -=10;
+ else if(search =='2'){ 
+ 	energy -=10;    // the energy decreases as you inqire wife
  	
  	
  	cout<<"YOU ARE INQUIRING THE WIFE OF PROFESSOR \n"<<endl;
@@ -156,8 +172,14 @@ cout<< "\tHis wife claims she was asleep, and the only neighbour nearby is someo
  	cout<<"2. WHERE WERE YOU AT THE TIME OF ROBBERY."<<endl;
  	cout<<"3. HOW MUCH YOU EARN."<<endl;
  	
+ 	// the user can avail 3 options or questions
+ 	
  	cin>>subsearch1;
  	
+ 	while (subsearch1 != '1' && subsearch1 != '2'&& subsearch1 !='3') {
+        cout << "Invalid input. Please enter '1' or '2' or '3' again: "<<endl;
+        cin >>subsearch1;
+                      }
  	if(subsearch1 =='2'){
  		
  		
@@ -178,7 +200,7 @@ cout<< "\tHis wife claims she was asleep, and the only neighbour nearby is someo
  			
  			cout<<"You availed the clue\n"<<endl;
  			reputation +=5;	
- 			
+ 			// you noted the hesitation of wife so
 		 }
 		 
 		 else if(note == 'N'){
@@ -196,16 +218,17 @@ cout<< "\tHis wife claims she was asleep, and the only neighbour nearby is someo
 	 	
  		cout<<"An invalid question to ask"<<endl;
  		reputation -=5;
- 		
+ 		energy-=10;
 	 }
 	 
 	 else if(subsearch1 =='3'){
 	 	
  		cout<<"An invalid question to ask"<<endl;
+ 			energy-=10;
  		reputation -=5 ;
  }
  
-  cout<<"\t --------------------------------------------------------------------------------------------------------";
+  cout<<"\t --------------------------------------------------------------------------------------------------------"<<endl;
   cout<<"\t --------------------------------------------------------------------------------------------------------";
   cout<<endl;
 }
@@ -214,12 +237,18 @@ cout<< "\tHis wife claims she was asleep, and the only neighbour nearby is someo
 else if (search =='3'){
 	energy -=10;
 	
+	
 	cout<<"What you will want to investigate from neighbour?"<<endl<<endl;
 	cout<<"1. Where were you at the time of robbery?"<<endl;
 	cout<<"2. Where you earn from?"<<endl;
 	cout<<"3. Where do you live?"<<endl<<endl;
 	
 	cin>>subsearch2;
+	
+	while (subsearch2 != '1' && subsearch2 != '2'&& subsearch2 !='3') {
+        cout << "Invalid input. Please enter '1' or '2' or '3' again: "<<endl;
+        cin >>subsearch2;
+                      }
 	
 		if(subsearch2 =='1'){
 			
@@ -286,6 +315,16 @@ else if (breaker1 =='N'){
 	break;
 }
 
+if(energy ==20) {    //Theuser fails as the energy is less than 20
+ 		cout<<endl;
+ 		cout<<endl;
+ 		
+    cout << "\t \t You Failed,energy too low";
+    cout << "\t \t Reputation = " << reputation << endl;
+     return;
+}
+
+
 
 
 }
@@ -305,6 +344,7 @@ cout<<"1. The wife, 2. The neighbour, 3. Both"<<endl<<endl;
  	reputation-=20;
  	
  }
+ 
  else if (decision == '3'){
  	cout<<"You Won!!"<<endl;
  	 cout<<"\t --------------------------------------------------------------------------------------------------------";
