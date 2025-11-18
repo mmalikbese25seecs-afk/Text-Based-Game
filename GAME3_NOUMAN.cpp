@@ -3,7 +3,7 @@
 using namespace std;
 
 int accuracy = 30;
-int clue = 0;
+int trace = 0;
 
 void start() {
     char key;
@@ -30,7 +30,7 @@ void clues() {
         int subsearch1;
         cout << "The body of Mr.Shah Jahan is lying on the ground \nThere are no BLOOD STAINS";
         cout << "\nThere is no MURDER WEAPON present!!!" << endl << endl;
-        clue++;
+        trace++;
         cout << "Do you want to investigate further in the study room?(1=Yes,2=No)";
         cin >> subsearch1;
         while (subsearch1 != 1 && subsearch1 != 0) {
@@ -41,7 +41,7 @@ void clues() {
             cout << "Several pieces of broken glass are present on the ground" << endl;
             cout << "\t\t\t\t================================" << endl;
             accuracy += 20;
-            clue++;
+            trace++;
         }
         else if (subsearch1 == 0) {
             accuracy -= 10;
@@ -60,7 +60,7 @@ void clues() {
         if (subsearch2 == 1) {
             cout << "\nThe flower pots look dry but other than that everything seems perfect" << endl;
             accuracy += 20;
-            clue += 2;
+             trace+= 2;
         }
         else if (subsearch2 == 0) {
             accuracy -= 20;
@@ -69,7 +69,7 @@ void clues() {
     else if (loc == 3) {
         cout << "--KITCHEN--" << endl;
         cout << "The Kitchen looks clean.A bottle of orange juice is lying on the shelf" << endl << endl;
-        clue++;
+        trace++;
         int subsearch3;
         cout << "Do you want to investigate further in the kitchen(1=Yes,2=No)";
         cin >> subsearch3;
@@ -81,7 +81,7 @@ void clues() {
             cout << "\nThere is some whitepowder on the table.It looks like POISON!!!" << endl;
             cout << "There are footprints on ground as well" << endl;
             accuracy += 20;
-            clue+=2;
+        trace+=2;
         }
         else if (subsearch3 == 0) {
             cout << endl;
@@ -196,7 +196,7 @@ void culprit() {
         cout << "============================================" << endl;
         cout << "\t\t\t\tCASE SUMMARY" << endl;
         cout << "Accuracy= " << accuracy << endl;
-        cout << "Clues found= " << clue << endl;
+        cout << "Clues found= " << trace << endl;
     }
 }
 
