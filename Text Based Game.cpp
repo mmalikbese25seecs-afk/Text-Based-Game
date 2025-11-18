@@ -16,7 +16,7 @@ bool loop= true, loop1=true;
 
 cout<<"\t\t\t\tProfessor Ahmed reports a robbery at his home."<<endl;
 cout<< "\tHis wife claims she was asleep, and the only neighbour nearby is someone who works night shifts."<<endl;
- cout<<"\t\tYou, Detective, must find out who’s telling the truth before evidence is lost."<<endl;
+ cout<<"\t\tYou, Detective, must find out who\’s telling the truth before evidence is lost."<<endl;
  cout<<"\t --------------------------------------------------------------------------------------------------------";
  cout<<endl;
  
@@ -817,8 +817,9 @@ int main(){
 	cout<<"-------------------------------------" << endl;
 	cout<<"      Powered by FELON GAMES     "<<endl;
 	cout<<"      Please Select Your Game         "<<endl;
+	cout<<"====================================="<<endl;
 	cout<<"1. Theif Mystery\n2. Murder Mystery\n3. Secrets Behind Study Room"<<endl;
-	cout<<"Press(1 or 2 or 3)<<endl;
+	cout<<"Press(1 or 2 or 3)"<<endl;
 		cin>>selection;
 	if(selection == 1)
 	{
@@ -834,5 +835,6 @@ int main(){
 	}
 	return 0;
 }
+
 
 
