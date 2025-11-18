@@ -218,7 +218,7 @@ if (accuracy > 100) accuracy = 100;
 }
 
 int main() {
-    scenario3();  // Call the scenario function to start the game
+    scenario3();  
     return 0;
 }
 
