@@ -775,17 +775,36 @@ void culprit() {
         cout << "Please enter a valid input '1','2','3'";
         cin >> accused;
     }
-
-    if (accused != 2) {
+    int kill = 1 + rand() % 3;
+    if (accused != kill) {
         cout << "You accused the wrong person " << endl;
         cout << "Shame on you!!!!" << endl;
         cout << "The GARDNER mixed poison in the large mug of Mr.SHAH JAHAN when maid went to clean the book shelves in the study room" << endl;
         cout << "When Mr.Shah JAHAN drank juice he was standing,He fell down and the glass shattered and he DIED on spot!!" << endl;
         cout << "\t\t\t\t============================================" << endl;
     }
-    else {
+    else if(kill==1 && accused==1){
+        cout << "Congratulations!You're a real detective" << endl;
+        cout << "The maid mixed poison in the large mug of Mr.SHAH JAHAN to get property" << endl;
+        cout << "When Mr.Shah JAHAN drank juice he was standing,He fell down and the glass shattered and he DIED on spot!!" << endl;
+        cout << "============================================" << endl;
+        cout << "\t\t\t\tCASE SUMMARY" << endl;
+        cout << "Accuracy= " << accuracy << endl;
+        cout << "Clues found= " << trace << endl;
+    }
+    else if (kill == 2 && accused == 2) {
         cout << "Congratulations!You're a real detective" << endl;
         cout << "The GARDNER mixed poison in the large mug of Mr.SHAH JAHAN when maid went to clean the book shelves in the study room" << endl;
+        cout << "When Mr.Shah JAHAN drank juice he was standing,He fell down and the glass shattered and he DIED on spot!!" << endl;
+        cout << "============================================" << endl;
+        cout << "\t\t\t\tCASE SUMMARY" << endl;
+        cout << "Accuracy= " << accuracy << endl;
+        cout << "Clues found= " << trace << endl;
+
+    }
+    else if (kill == 1 && accused == 1) {
+        cout << "Congratulations!You're a real detective" << endl;
+        cout << "Mr.Aurangzeb mixed poison in the large mug of Mr.SHAH JAHAN and did all this in the kitchen so Maid becomes suspicious " << endl;
         cout << "When Mr.Shah JAHAN drank juice he was standing,He fell down and the glass shattered and he DIED on spot!!" << endl;
         cout << "============================================" << endl;
         cout << "\t\t\t\tCASE SUMMARY" << endl;
@@ -795,6 +814,7 @@ void culprit() {
 }
 
 void scenario3() {
+    
     start();  // Start the game
     for (int i = 1; i <= 3; i++) {
         cout << "\t\t\t\tInvestigation#" << i << endl;
